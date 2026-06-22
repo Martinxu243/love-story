@@ -1,12 +1,9 @@
 import HeroSection from "@/components/home/HeroSection";
 import NavGrid from "@/components/home/NavGrid";
 import MusicBar from "@/components/ui/MusicBar";
-import { getConfig } from "@/lib/data";
-
-export const dynamic = "force-dynamic";
+import config from "@/data/config.json";
 
 export default function HomePage() {
-  const config = getConfig();
   return (
     <div className="relative z-[1] min-h-[100dvh] flex flex-col pb-8">
       <div className="h-4" />

@@ -1,9 +1,6 @@
 import PageHeader from "@/components/ui/PageHeader";
 import { formatDate, getYear } from "@/lib/utils";
-import { getTimeline } from "@/lib/data";
-import type { TimelineItem } from "@/lib/data";
-
-export const dynamic = "force-dynamic";
+import timeline from "@/data/timeline.json";
 
 const nodeColors: Record<string, string> = {
   love: "#e8a0b0",
@@ -12,8 +9,8 @@ const nodeColors: Record<string, string> = {
   daily: "#98b8a0",
 };
 
-function groupByYear(items: TimelineItem[]) {
-  const groups: Record<number, TimelineItem[]> = {};
+function groupByYear(items: typeof timeline) {
+  const groups: Record<number, typeof timeline> = {};
   for (const item of items) {
     const year = getYear(item.date);
     if (!groups[year]) groups[year] = [];
@@ -25,7 +22,6 @@ function groupByYear(items: TimelineItem[]) {
 }
 
 export default function TimelinePage() {
-  const timeline = getTimeline();
   const groups = groupByYear(timeline);
 
   return (

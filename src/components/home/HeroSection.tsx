@@ -1,10 +1,9 @@
 import DayCounter from "@/components/ui/DayCounter";
 import HeartbeatLine from "@/components/ui/HeartbeatLine";
 import { daysBetween } from "@/lib/utils";
-import { getConfig } from "@/lib/data";
+import config from "@/data/config.json";
 
 export default function HeroSection() {
-  const config = getConfig();
   const days = daysBetween(config.startDate);
 
   return (
