@@ -1,11 +1,14 @@
 import PageHeader from "@/components/ui/PageHeader";
 import { formatDate } from "@/lib/utils";
-import wishlist from "@/data/wishlist.json";
+import { getWishlist } from "@/lib/data";
 
-const completed = wishlist.filter((w) => w.completed);
-const pending = wishlist.filter((w) => !w.completed);
+export const dynamic = "force-dynamic";
 
 export default function WishlistPage() {
+  const wishlist = getWishlist();
+  const completed = wishlist.filter((w) => w.completed);
+  const pending = wishlist.filter((w) => !w.completed);
+
   return (
     <div className="min-h-[100dvh] bg-warm-base">
       <PageHeader title="愿望清单" subtitle="Bucket List" />
