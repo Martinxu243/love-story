@@ -197,10 +197,6 @@ export default function AdminPage() {
 
   return (
     <div className="min-h-[100dvh] bg-[#faf8f6]">
-      {/* Deploy Notice */}
-      <div className="bg-amber-50 border-b border-amber-200 px-4 py-2 text-center">
-        <p className="text-[11px] text-amber-700">⚠️ 线上版本仅可浏览，编辑功能需在本地开发模式使用</p>
-      </div>
       {/* Header */}
       <div className="sticky top-0 z-20 bg-white/90 backdrop-blur-md border-b border-[#eee] px-4 py-3 flex items-center justify-between">
         <div>
